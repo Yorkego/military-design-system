@@ -1,0 +1,11 @@
+.leftSelectInput .MuiInputBase-root {
+	border-radius: 4px 0 0 4px;
+}
+
+.rightTextFieldInput .MuiInputBase-root {
+	border-radius: 0 4px 4px 0;
+}
+
+.multiselect .MuiAutocomplete-inputRoot {
+	width: 400px;
+}
