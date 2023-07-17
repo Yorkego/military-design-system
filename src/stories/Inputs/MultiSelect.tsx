@@ -23,6 +23,7 @@ export const MultiSelect = (props) => {
 		<Autocomplete
       className='multiselect'
       multiple
+      {...props}
       id="tags-outlined"
       options={names}
       renderInput={(params) => (

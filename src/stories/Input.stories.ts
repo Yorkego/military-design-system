@@ -1,12 +1,16 @@
 import { Input } from './Inputs/Input';
+import type { Meta, StoryObj } from '@storybook/react';
 
 
-export default {
+const meta: Meta<typeof Input> = {
   title: 'Input',
   component: Input,
 };
 
-export const Basic =  {
+export default meta;
+type Story = StoryObj<typeof Input>;
+
+export const Basic: Story =  {
   args: {
     disabled: false,
     required: false,
@@ -36,7 +40,7 @@ export const Basic =  {
   },
 };
 
-export const XAdornment =  {
+export const XAdornment: Story =  {
   args: {
     serviceProps: { xAdornment: true },
     ...Basic.args, 
@@ -46,7 +50,7 @@ export const XAdornment =  {
   },
 };
 
-export const Search =  {
+export const Search: Story =  {
   args: {
     serviceProps: { search: true },
     ...Basic.args, 
@@ -56,7 +60,7 @@ export const Search =  {
   },
 };
 
-export const Select =  {
+export const Select: Story =  {
   args: {
     disabled: false,
     required: false,
@@ -65,14 +69,18 @@ export const Select =  {
     label: '',
     defaultValue: 'test2',
     helperText: '',   
-  }, 
+  },
+  argTypes: {
+    ...Basic.argTypes, 
+  },
 };
 
-export const MultiSelect =  {
+export const MultiSelect: Story =  {
   args: {
     serviceProps: { multiSelect: true },
   },  
   argTypes: {
+    ...Basic.argTypes,
     serviceProps: {
       table: {
         disable: true
@@ -81,11 +89,12 @@ export const MultiSelect =  {
   },
 };
 
-export const Password =  {
+export const Password: Story =  {
   args: {
     serviceProps: { password: true },
   },  
   argTypes: {
+    ...Basic.argTypes,
     serviceProps: {
       table: {
         disable: true
@@ -94,11 +103,12 @@ export const Password =  {
   },
 };
 
-export const SelectAndTextField =  {
+export const SelectAndTextField: Story =  {
   args: {
     serviceProps: { selectAndTextField: true },
   },  
   argTypes: {
+    ...Basic.argTypes,
     serviceProps: {
       table: {
         disable: true
@@ -107,7 +117,7 @@ export const SelectAndTextField =  {
   },
 };
 
-export const DateAndTimePicker =  {
+export const DateAndTimePicker: Story =  {
   args: {
     serviceProps: { dateAndTimePicker: true },
   },  

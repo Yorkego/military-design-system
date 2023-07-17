@@ -5,9 +5,7 @@ import {
 } from '@mui/material';
 import './input.css';
 
-
 export const SelectAndTextField = (props) => {
-
 	return (
 		<div>
 			<TextField

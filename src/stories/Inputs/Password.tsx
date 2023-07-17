@@ -25,7 +25,7 @@ export const Password = (props) => {
 
 
   return (
-    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+    <FormControl {...props} sx={{ m: 1, width: '25ch' }} variant="outlined">
       <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
       <OutlinedInput
         id="outlined-adornment-password"
