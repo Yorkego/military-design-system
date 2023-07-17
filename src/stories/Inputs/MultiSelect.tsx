@@ -5,18 +5,18 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import './input.css';
 
-const names: string[] = [
-  "Humaira Sims",
-  "Santiago Solis",
-  "Dawid Floyd",
-  "Mateo Barlow",
-  "Samia Navarro",
-  "Kaden Fields",
-  "Genevieve Watkins",
-  "Mariah Hickman",
-  "Rocco Richardson",
-  "Harris Glenn"
-];
+enum names {
+  HumairaSims ="Humaira Sims",
+  SantiagoSolis = "Santiago Solis",
+  DawidFloyd = "Dawid Floyd",
+  MateoBarlow = "Mateo Barlow",
+  SamiaNavarro = "Samia Navarro",
+  KadenFields = "Kaden Fields",
+  GenevieveWatkins = "Genevieve Watkins",
+  MariahHickman = "Mariah Hickman",
+  RoccoRichardson = "Rocco Richardson",
+  HarrisGlenn = "Harris Glenn"
+};
 
 export const MultiSelect = (props) => {
 	return (
@@ -25,7 +25,7 @@ export const MultiSelect = (props) => {
       multiple
       {...props}
       id="tags-outlined"
-      options={names}
+      options={Object.values(names)}
       renderInput={(params) => (
         <TextField
           {...params}

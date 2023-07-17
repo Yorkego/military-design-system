@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
@@ -12,10 +12,14 @@ import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
+enum passwordViewType {
+  text = 'text',
+  password = 'password',
+}
 
 export const Password = (props) => {
 
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -23,13 +27,12 @@ export const Password = (props) => {
     event.preventDefault();
   };
 
-
   return (
     <FormControl {...props} sx={{ m: 1, width: '25ch' }} variant="outlined">
       <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
       <OutlinedInput
         id="outlined-adornment-password"
-        type={showPassword ? 'text' : 'password'}
+        type={showPassword ? passwordViewType.text : passwordViewType.password}
         endAdornment={
           <InputAdornment position="end">
             <IconButton
